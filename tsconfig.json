@@ -1,0 +1,25 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "target": "es5",
+        "lib": ["es6"],
+        "typeRoots": [ "node_modules/@types" ],
+        "paths": { 
+            "@interfaces": [ "src/interfaces" ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.test.ts"
+    ]
+}

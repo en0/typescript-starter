@@ -1,0 +1,6 @@
+## Service configuration file
+## 2017-12-02
+## Ian R Laird <irlaird@gmail.com>
+---
+logLevel: debug
+name: world

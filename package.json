@@ -1,0 +1,58 @@
+{
+  "name": "idea-service",
+  "version": "1.0.0",
+  "description": "Testing how to integrate build systems with lint",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "test": "jest",
+    "build": "npm run test && npm run build-ts && npm run lint",
+    "build-ts": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint-watch": "nodemon -x npm run lint",
+    "start-watch": "nodemon",
+    "test-watch": "nodemon --config nodemon.test.json",
+    "build-watch": "nodemon -x npm build",
+    "dev-watch": "nodemon --config nodemon.devel.json"
+  },
+  "author": "Ian Laird <irlaird@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^21.1.8",
+    "coveralls": "^3.0.0",
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.1",
+    "ts-jest": "^21.2.4",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@types/argparse": "^1.0.33",
+    "@types/js-yaml": "^3.10.1",
+    "@types/pino": "^4.7.0",
+    "@types/reflect-metadata": "0.0.5",
+    "argparse": "^1.0.9",
+    "inversify": "^4.5.2",
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.4",
+    "pino": "^4.10.2",
+    "reflect-metadata": "^0.1.10"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "globals": {
+      "__TS_CONFIG__": "tsconfig.json"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.test.(ts|js)"
+    ]
+  }
+}
